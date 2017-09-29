@@ -1,0 +1,26 @@
+ /* ::: BASE LAYOUT STYLES ::::::::::::::::::::::::::::::::: */
+
+    .wrapper {
+    	@include clearfix;
+        z-index:10;
+        margin-bottom: 450px;
+        padding-top:70px;
+
+        @include media(min-width 600px){
+            padding-top: 132px;
+        }
+
+        @include media($tablet){
+            padding-top:168px;
+        }
+    }
+
+    .container {
+    position:relative;
+    @include outer-container;
+    @include clearfix;
+	}
+
+    .entry-footer {
+        @include clearfix;
+    }

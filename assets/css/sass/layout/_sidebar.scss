@@ -1,0 +1,144 @@
+ 	.page-sidebar {
+
+ 		@include media ($tablet){
+            @include span-columns (3 of 10);
+        }
+
+ 		@include media ($desktop){
+        @include span-columns(4 of 12);
+        @include shift(1);
+    	}
+	}
+
+	.post-sidebar {
+	 		@include media ($tablet){
+	            @include span-columns (3 of 10);
+	        }
+
+	 		@include media ($desktop){
+	        @include span-columns(4 of 12);
+	        @include shift(1);
+	    	}
+	}
+
+//Side Bar Child Pages Navigation
+
+	#child-pages {
+
+		ul{
+			display:block;
+			list-style-type: none;
+			margin:0;
+			padding:0;
+			position:relative;
+			width:100%;
+
+			li { display:block;
+				border-bottom: 1px solid $lighter-grey;
+				width:100%;
+
+				a {
+					position:relative;
+					font-size:$f15;
+					font-weight: 400;
+					height:40px;
+					display:table-cell;
+					vertical-align: middle;
+					padding-left:20px;
+
+					&:before {
+							@include fawesome;
+							content:"\f106";
+							padding-right:10px;
+							display:inline-block;
+						}
+
+					@include media ($tablet) {
+						&:before {
+							@include fawesome;
+							content:"\f104";
+							padding-right:10px;
+							display:inline-block;
+						}
+					}
+
+					@include media ($desktop){
+						padding-left:0;
+						left:4px;
+						@include transition-property(all);
+		        		@include transition-duration(0.2s);
+		        		@include transition-timing-function(ease-in-out);
+
+						&:hover {left:0;}
+					}
+				}
+
+				&.current_page_item {
+					background-color: $secondary-color;
+
+					@include media ($tablet){
+						&:before {
+							display: inline-block;
+							position:absolute;
+							left:-10px;
+							border-top: 20px solid transparent;
+							border-bottom: 20px solid transparent;
+							border-right: 10px solid $secondary-color;
+							font-size: 1em;
+	  						content: ' ';
+	  						-webkit-backface-visibility: hidden;
+					        -moz-transform: scaleX(1.1); // optional: replace with Sass/SCSS/LESS mixin
+					        -moz-transform-origin: top; // optional: replace with mixin, too
+						}
+					}
+					a {
+						color:$white;
+					}
+				}
+			}
+		}
+
+	}
+
+
+//Side Bar Latest News
+
+	#wp-latest-news {
+			border-bottom:1px solid $lighter-grey;
+			padding:20px 0;
+
+		ul{
+			display:block;
+			list-style-type: none;
+			margin:0 0 20px;
+			padding:0;
+			position:relative;
+
+			li { display:block;
+				border-bottom: 1px solid $lighter-grey;
+
+				a {
+					position:relative;
+					font-size:$f14;
+					font-weight: 400;
+					height:40px;
+					left:0;
+					display:table-cell;
+					vertical-align: middle;
+					@include transition-property(all);
+	        		@include transition-duration(0.2s);
+	        		@include transition-timing-function(ease-in-out);
+
+					&:before {
+						@include fawesome;
+						content:"\f105";
+						padding-right:10px;
+						display:inline-block;
+						color:$primary-color;
+					}
+					&:hover {left:4px;}
+				}
+			}
+		}
+
+	}

@@ -1,0 +1,47 @@
+.clearfix, .group{
+  //@include clearfix;
+}
+
+  // our icon font
+	@mixin fawesome() {
+		font-family: FontAwesome;
+		font-weight: normal;
+	}
+
+  @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+  }
+
+  @mixin arrowstyle($color) {
+      &:after {
+        position: absolute;
+        bottom: -37px;
+        left: 50%;
+        margin-left: -90px;
+        width: 0;
+        height: 0;
+        border-right: 90px solid transparent;
+        border-top: 37px solid $color;
+        border-left: 90px solid transparent;
+        content: ' ';
+        z-index: 59;
+        -moz-transform: scaleX(1.1); // optional: replace with Sass/SCSS/LESS mixin
+        -moz-transform-origin: top; // optional: replace with mixin, too
+      }
+    }
+
+  @mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+@mixin clearfixie() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+    zoom:1;
+  }
+}

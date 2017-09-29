@@ -1,0 +1,271 @@
+/* ::: FOOTER ::::::::::::::::::::::::::::::::: */
+
+
+    #footer {
+        position: fixed;
+        width:100%;
+        bottom:0;
+        height:450px;
+        z-index:-101;
+        background-color:$different-red;
+        color:$white;
+        text-transform: uppercase;
+        font-weight: 400;
+        line-height:40px;
+
+        .high-contrast & {
+            background-color: $white;
+        }
+    }
+
+    .footer-wrapper {
+        @include outer-container;
+        padding-top:80px;
+
+    }
+
+    .footer-connect-wrapper {
+        @include row();
+        @include omega(3n);
+    }
+    .footer-logo, .footer-newsletter, .footer-connect {
+        @include span-columns(12);
+        margin-bottom: 20px;
+
+            @include media($tablet){
+            @include span-columns(4);
+            }
+    }
+
+    a.logo-footer {
+        display: block;
+        background:transparent url(../images/wp-logo-white.png) no-repeat 50% 0;
+        width:100%;
+        min-height: 104px;
+        height:auto;
+        position: relative;
+
+            .high-contrast & {
+                background:transparent url(../images/workpower-logo.png) no-repeat 0 0;
+            }
+
+            @include media($tablet){
+            background-position: 0 0;
+        }
+    }
+
+    .social-connect {
+        text-align: center;
+        color:$white;
+        line-height: 1.2em;
+
+        .high-contrast & {
+            color:$primary-color;
+        }
+
+        .newl-title {
+            line-height:$f30;
+        }
+        a {
+            &:link,
+            &:active,
+            &:visited {
+            display:inline-block;
+            font-size:$f30;
+            color:$white;
+            margin:10px 5px;
+            padding:10px;
+            line-height: 1em;
+            border-radius:2px;
+        }
+            .high-contrast & {
+                color:$primary-color;
+            }
+        }
+        a.soc-facebook:hover {
+            color:$facebook;
+            background-color:$white;
+        }
+        a.soc-linkedin:hover {
+            color:$linkedin;
+            background-color:$white;
+        }
+        a.soc-youtube:hover {
+            color:$youtube;
+            background-color:$white;
+        }
+        a.soc-twitter:hover {
+            color:$twitter;
+            background-color:$white;
+        }
+        a.soc-google:hover {
+            color:$google;
+            background-color:$white;
+        }
+        &.news-up {text-align:center;
+
+        }
+        .newl-copy {
+            color:$white;
+            line-height: 1.2em;
+            .high-contrast & {
+                color:$primary-color;
+            }
+        }
+
+    }
+        a.sign-up-button {
+            &:link, &:active, &:visited {
+            display:inline-block;
+            border:1px solid $white;
+            padding:10px;
+            margin-top: 10px;
+            color:$white;
+            background: $different-red;
+            }
+
+            .high-contrast & {
+                border-color: $primary-color;
+            }
+
+            &:hover {
+                background-color:$white;
+                color:$secondary-color;
+
+                .high-contrast & {
+                    background-color:$secondary-color;
+                    color:$white;
+                }
+            }
+        }
+
+    .footer-links {
+        @include row();
+        margin-top: 40px;
+        margin-bottom: 20px;
+        border-top: 1px solid $foot-red;
+        padding:20px 0;
+        border-bottom: 1px solid $foot-red;
+
+        .fw-wrapper {
+            @include span-columns(4 of 12);
+            @include omega(3n);
+        }
+        h4.widgettitle {
+            font-size: $f15;
+            margin-bottom: 5px;
+            color:$white;
+            font-weight: 600;
+            .high-contrast & {
+                color:$primary-color;
+            }
+        }
+
+        .high-contrast & .menu li a  {
+            color:$primary-color;
+        }
+
+         a { color:$white;
+            &:link,
+            &:active,
+            &:visited {
+                color:$white;
+            }
+
+            &:hover {
+                color:$white;
+            }
+        }
+    }
+
+    .footer-links .menu {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        li {
+            font-size:$f14;
+            line-height: 1.25em;
+            text-transform: none;
+
+            a {
+                color:$white;
+                &:link, &:active, &:visited{
+                padding-left:0;
+                color:$white;
+                @include transition-property(all);
+                    @include transition-duration(0.2s);
+                    @include transition-timing-function(ease-in-out);
+                }
+                    &:before {
+                        @include fawesome;
+                        content:"\f105";
+                        padding-right:10px;
+                        display:inline-block;
+                        color:$white;
+                    }
+                    &:hover {
+                        padding-left:4px;color:$white;
+                }
+
+               .high-contrast & {
+                color:$primary-color;
+                    &:link, &:active, &:visited{
+                        color:$secondary-color;
+                    }
+                    &:before { color:$primary-color;
+                    }
+                    &:hover {
+                        color:$secondary-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-copy {
+        display:block;
+        text-align:right;
+        font-size:$f14;
+        line-height:1em;
+        color:$white;
+    }
+
+/*
+* Scroll to top link inside footer,
+* but fixed relative to viewport
+*/
+    #scroll-top {
+      position:fixed;
+      /* On top of everything */
+      z-index:9999;
+      bottom:40px;
+      right:0;
+      margin:0.75em;
+      display:inline-block;
+      padding:0.15em 0.5em;
+      border-radius:3px;
+      color:$white;
+      font-size: $f14;
+      font-weight: 600;
+      text-decoration:none;
+      border:1px solid transparent;
+      background:$primary-color;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      display:none;
+
+        &:after { // Up Arrow for the scroll top link
+          content:"";
+          display:inline-block;
+          vertical-align:middle;
+          margin-left:0.35em;
+          width: 0;
+          height: 0;
+          border-left: 0.3em solid transparent;
+          border-right:  0.3em solid transparent;
+          border-bottom:  0.3em solid #fefefe;
+        }
+    }

@@ -1,0 +1,17 @@
+//Bread Crumb Navigation
+
+	#breadcrumbs {
+			font-size: $f12;
+			font-weight: 400;
+			text-transform: uppercase;
+			display: block;
+			padding:10px 0;
+			border-bottom:1px solid $lighter-grey;
+			@include media($tablet){
+				font-size: $f14;
+			}
+		.bcgap  {
+			padding:0 5px;
+		}
+
+	}

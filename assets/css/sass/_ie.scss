@@ -1,0 +1,106 @@
+// IE 6,7,8
+.lt-ie9{
+    .container {
+     	@extend %clearfix;
+  	}
+
+    .branding {
+    	@extend %clearfix;
+    }
+    #nav {clear:both;}
+
+	#latest-news {
+
+		.latest-news-wrapper {
+			@extend %container;
+		}
+		.latest-news-content {
+			@extend %clearfix;
+		}
+		&:after {
+			border-top: #f4f4f4 37px solid;
+		}
+	}
+
+	.post-sidebar, .page-sidebar {
+		margin-right: 0;
+	}
+
+	.page .site-main {
+		@extend %clearfix;
+	}
+
+	.latest-news-content {
+			@extend %clearfix;
+		}
+	.gridder-expanded-content {
+			@extend %clearfix;
+	}
+	.news-article {
+			&:nth-child(4n){
+			margin-right:0;
+			clear:right;
+			&:after {
+				@extend %clearfix;
+			}
+			}
+		}
+	.contact-page article.page .entry-wrapper {
+		@extend %clearfix;
+	}
+	.contact-page .contact-details-wrapper .contact-quick {
+		margin-right: 0;
+	}
+	// #main .news-article.slvzr-nth-child402n41 {
+	// 	margin-right: 0;
+	// }
+	.contact-page {
+		&:after {
+			border-top: #f4f4f4 37px solid;
+		}
+	}
+
+	.inner-page {
+		&:after {
+			border-top: #f4f4f4 37px solid;
+		}
+	}
+
+	#intro-our-business {
+		&:after {
+			border-top: #f4f4f4 37px solid;
+		}
+	}
+
+	.grid-display-wrapper {
+			@extend %container;
+		}
+	.footer-connect-wrapper, .footer-links {
+		@extend %container;
+	}
+
+	li.gridder-list.slvzr-nth-of-type402n41 {
+		margin-right: 0;
+	}
+	li.gridder-list.slvzr-nth-of-type403n41 {
+		margin-right: 0;
+	}
+
+	li.gridder-list.slvzr-nth-of-type404n41 {
+		margin-right: 0;
+	}
+	.slvzr-last-child {
+		margin-right: 0;
+	}
+
+}
+
+// IE 6,7
+.lt-ie8{
+
+}
+// IE 6
+// Wouldn't worry too much about this one
+.lt-ie7{
+
+}

@@ -1,0 +1,70 @@
+/* ::: SITE HEADER ::::::::::::::::::::::::::::::::: */
+    a.skip-link {
+            display: inline-block;
+            @include hide-text;
+            position:absolute
+    }
+    #header {
+        display:none;
+        @include media ($tablet){
+        display: block;
+        width:100%;
+        min-height:130px;
+        position: fixed;
+        z-index: 60;
+        border:1px solid $white;
+        background:$white;
+        }
+    }
+    #header:after{
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0.1);
+        bottom: -1px;
+        clear: both;
+        content: "";
+        display: block;
+        height: 1px;
+        left: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+    }
+    .header-wrapper {
+        @include outer-container;
+    }
+    .logo-wrapper {
+        @include span-columns(4);
+    }
+    .logo-contain {
+        @include hide-text;
+    }
+    .branding {
+        @include outer-container;
+        @include clearfix;
+    }
+    a.logo {
+        display: block;
+        float:left;
+        background:transparent url(../images/workpower-logo.png) no-repeat 0 0;
+        width:215px;
+        height:92px;
+        position: relative;
+        margin:20px 0 20px 20px;
+        @include media ($tablet){
+        margin:20px 0 0;
+        }
+    }
+
+    .contact-now {
+        @include span-columns(8);
+        padding-top:40px;
+        font-weight: 300;
+        text-align: right;
+        font-size: $f24;
+            &:before {
+            @include fawesome;
+            content:"\f095";
+            padding-right:5px;
+            display:inline-block;
+            }
+
+        }

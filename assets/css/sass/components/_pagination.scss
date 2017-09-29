@@ -1,0 +1,32 @@
+	.paginationWrap {
+		@include clearfix;
+		text-align:center;
+		padding:40px 0;
+	}
+
+	/* Paging */
+	.pagingLinks a {
+		margin: 0 5px;
+		padding: 0 9px;
+		font-size: $f15;
+		font-weight: 400;
+		line-height: 2em;
+		border: 1px solid $light-grey;
+		background-color: transparent;
+		text-shadow: none;
+		text-decoration:none;
+		display:inline-block;
+
+		&.current, &.current:hover {
+			background:transparent;
+			border:none!important;
+			color:$primary-color;
+			font-weight: 600;
+		}
+
+		&:hover {
+			background: $secondary-color;
+			color:$white;
+			border-color:$primary-color;
+		}
+	}

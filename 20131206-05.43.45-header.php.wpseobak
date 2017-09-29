@@ -1,0 +1,90 @@
+<?php global $data;?>
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9"> <![endif]-->
+<!--[if IE 9]> <html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="utf-8">
+<meta name="description" content="<?php echo $data['meta_description']; ?>">
+<meta name="keywords" content="<?php echo $data['meta_keywords']; ?>" >
+<meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+<link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/icons/wp-favicon.ico">
+<link rel="shortcut icon" href="<?php bloginfo('template_directory');?>/icons/wp-favicon.icns">
+<title><?php wp_title(' | ', true, 'right'); ?></title>
+<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_uri(); ?>" />
+<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+	   <script src="<?php bloginfo('template_directory');?>/js/respond.min.js"></script>
+  <![endif]-->
+<?php if (!empty($data['google_analytics'])) { 
+echo stripslashes($data['google_analytics']);} ?>
+<?php wp_head();?>
+</head>
+ <?php 
+  if($data['site_maintenance'] == 1) {
+    
+    if (current_user_can('administrator')){ 
+    } else {
+     echo "Please Log In"; 
+    die();
+    }
+    
+  }
+  ?>
+<body id="page-top" <?php body_class(); ?>>
+
+   <?php
+if (!is_front_page())
+{?>
+  <header id="header" class="lft-grad clearfix">
+    <div class="container">
+      <div class="logo-contain"><a href="<?php bloginfo('url' );?>" class="logo" title="Workpower Inc.">Workpower</a></div>
+        <?php if (!is_page()) { ?>
+        <nav id="nav" role="navigation" class="nnav clearfix">
+        <?php wp_nav_menu( array( 'theme_location' => 'news-menu' ) ); ?>
+        </nav>
+        <?php } ?>
+    </div>
+  </header>
+<?php } else { ?>
+	<div id="intro-wrapper">
+		<!--Mobile Navigation -->
+			<nav id="mobile" class="lft-grad">
+    			<div id="toggle-bar">
+    				<div class="logo-contain"><a href="#page-top" class="logo">Workpower</a></div>
+        			<em class="icon-reorder mtoggle navicon"></em>
+        			<span class="mtoggle navtxt">MENU</span>
+    			</div>
+			<?php wp_nav_menu( array( 'theme_location' => 'mobile-menu' ) ); ?>
+			</nav>
+		<!--End Mobile Navigation -->
+		<header id="header" class="lft-grad clearfix">
+			<div class="container wrapper-nav">
+        <div class="logo-contain"><a href="#page-top" class="logo">Workpower</a></div>
+				<nav id="nav" role="navigation" class="clearfix">
+				<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+				</nav>
+			</div>
+    </header>
+        <!-- Start Contact Us Dropdown -->
+          <div class="container">
+            <div id="freequotearea">
+              <div id="quotecontainer">
+                <div id="quoteformwrapper"><em class="icon-caret-up"></em>
+                   
+                    <span class="cont-name"><?php if (!empty($data['company_contact'])) {echo $data['company_contact']; }?></span>
+                    <span class="cont-tel"><?php if (!empty($data['contact_number'])) {echo $data['contact_number']; }?></span>
+                      <?php if (!empty($data['contact_form_id'])) { 
+                                $formid=$data['contact_form_id'];
+                      echo do_shortcode('[gravityform id='.$formid.' title=false description=false ajax=true]');}?>
+                   <a href="#" class="closeit contactform"><em class="icon-ban-circle"></em> close</a>
+                    <div class="clearfix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+<?php }?>

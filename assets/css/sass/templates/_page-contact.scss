@@ -1,0 +1,113 @@
+//CONTACT PAGE
+
+    .contact-page {
+        position: relative;
+        padding-bottom:60px;
+        @extend %gradient-fill;
+        @include arrowstyle($gradient-end);
+
+        article.page {
+            .entry-wrapper {
+                @include clearfix;
+                padding:20px;
+                background-color:$white;
+                border-radius:5px;
+            }
+        }
+
+        .contact-details-wrapper {
+            @include media ($tablet) {
+            @include span-columns(7 of 12);
+            }
+            .entry-thumb, .contact-details {
+                @include media (min-width 570px max-width $tablet) {
+                @include span-columns(5 of 10);
+                }
+                @include media(min-width $tablet){
+                @include span-columns(7 of 7);
+                }
+            }
+            .contact-address, .contact-quick {
+                 @include media ($desktop) {
+                    @include span-columns(6 of 12);
+                 }
+
+            }
+            .contact-quick {text-align:left;
+
+            }
+
+        }
+
+        .contact-content {
+            @include media ($tablet) {
+            @include span-columns(5 of 12);
+            @include omega;
+            }
+        }
+
+
+        .tel-contact, .email-contact {
+            display:block;
+            font-size:$f18;
+            font-weight: 600;
+        }
+
+    }
+#wp-service-contacts {
+    margin-top: 40px;
+
+    .serv-contacts {
+        @include media ($tablet) {
+        @include span-columns(10 of 10);
+        }
+        @include media ($desktop) {
+        @include span-columns(12 of 12);
+        }
+    }
+
+    .serv-contact-content {
+        margin-bottom: 20px;
+        @include span-columns(10 of 10);
+        @include media ($large-tablet) {
+            @include span-columns(5 of 10);
+            @include omega(2n);
+        }
+        @include media ($desktop) {
+            @include omega-reset(2n);
+            @include span-columns(4 of 12);
+            @include omega(3n);
+        }
+    }
+
+
+    h4 {
+        margin-bottom: 0;
+        font-size: $f15;
+
+    a {color:$primary-color;
+        &:hover {
+            color:$secondary-color;
+            }
+            &:after {
+                @include fawesome;
+                content:"\f08e";
+                padding-left:10px ;
+                display:inline-block;
+                color:$secondary-color;
+            }
+        }
+    }
+
+    .bus-contact-details {
+        padding-top:0;
+        font-size: $f15;
+    }
+    .bus-contact-no:before, .bus-contact-name:before {
+        color:$dark-grey;
+    }
+    .contact-content {
+        padding-bottom:5px;
+        margin-bottom: 20px;
+    }
+}

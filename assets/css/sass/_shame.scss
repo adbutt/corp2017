@@ -1,0 +1,62 @@
+/* ::: BASE LAYOUT ::::::::::::::::::::::::::::::::: */
+
+    .no-show {@include hide-text;line-height:0;margin:0;padding:0;}
+
+
+
+// ACCESSIBILITY - Contrast - Modifies page elements to be higher in contrast
+
+    .high-contrast {
+        font-weight:400;
+            .contact-now {
+                font-weight:400;
+            }
+            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .entry-title {
+                font-weight: 400;
+            }
+            .lft-grad, .grad-top {
+                background:$white;
+                border-bottom:1px solid $light-grey !important;
+            }
+            .hero-tagline {
+                background: #8c005c;
+            }
+            #workpower-introduction {
+                border-bottom:1px solid $light-grey !important;
+                .promo-area .promo-copy {
+                    background:$primary-color;
+                }
+            }
+            .content-leader:after {
+                border-top: 37px solid $light-grey;
+            }
+            .news-snippet .article-content {
+                border:1px solid $light-grey;
+            }
+
+            .inner-page article.page {
+                border: 1px solid $light-grey;
+            }
+
+            .page-title, .inner-page-title {
+                font-weight:400;
+            }
+            .serv-head-new, .blog-head {
+                font-weight:600;
+            }
+            .date-holder {
+                background:$white; border-top:1px solid $light-grey;border-left:1px solid $light-grey;
+            }
+            a.read-more {
+                background:$white; border:2px solid $light-grey;
+            }
+            .blog-side, .service-side {
+                font-weight:400;
+            }
+            div.page-header-standard[style],div.page-header-custom[style]  {background:$secondary-color!important;}
+            .post .entry-wrapper, .gridder-list .gridder-title {border:1px solid $light-grey;}
+            // article.page footer {border-bottom:1px solid $light-grey;}
+
+    }
+
+

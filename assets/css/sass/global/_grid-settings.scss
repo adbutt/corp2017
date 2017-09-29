@@ -1,0 +1,27 @@
+@import "../../../../vendor/neat/neat-helpers"; // or "neat-helpers" when in Rails
+
+// Change the grid settings
+$column: 60px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: em(980);
+
+$fg-column: $column;
+$fg-gutter: $gutter;
+
+// Visual Grid
+$visual-grid: false;
+$visual-grid-color: #bada55;
+$visual-grid-opacity: 0.1;
+$visual-grid-index: front;
+
+// Widths
+$mobile-landscape: em(480);
+$tablet: em(768);
+$tablet-landscape: em(1024);
+$laptop: em(1280);
+$desktop: em(1440);
+
+$small-tablet: (min-width $mobile-landscape max-width $tablet);
+$large-tablet: (min-width $tablet max-width $tablet-landscape);
+$desktop: (min-width $tablet-landscape);

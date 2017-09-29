@@ -1,0 +1,57 @@
+//Add Bourbon & Neat
+@import "../../../vendor/bourbon/bourbon";
+@import "global/grid-settings";
+@import "../../../vendor/neat/neat";
+
+//Use Font Awesome 4.3.0
+@import "../../fonts/font-awesome-4.3.0/scss/font-awesome";
+
+// Set variables and reusable mixins
+@import "global/config";
+@import "global/mixins";
+@import "global/placeholders";
+
+// Reset using Normalize
+@import "base/reset";
+
+// Import typical layout sass modules
+@import "base/print";
+@import "base/type";
+@import "base/wordpress";
+
+// Import typical component modules
+@import "components/breadcrumbs";
+@import "components/buttons";
+@import "components/pagination";
+@import "components/post-navigation";
+@import "components/forms";
+@import "components/media";
+@import "components/tables";
+
+// Import typical project layouts
+@import "layout/header";
+@import "layout/nav";
+@import "layout/body";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "layout/blocks";
+
+//Import template specific styles
+@import "templates/home";
+@import "templates/page";
+@import "templates/single";
+@import "templates/page-business";
+@import "templates/page-contact";
+@import "templates/page-team";
+
+// Specific project styles, add any section specific sass modules here
+@import "components/gridder";
+
+// Plugin / Vendor Styles
+@import "vendor/fancybox";
+
+// If IE support is needed
+@import "ie";
+
+// For anything quick and dirty eg.. overides that need to be thrown in
+@import "shame";

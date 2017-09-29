@@ -1,0 +1,33 @@
+    %gradient-fill {
+        @include linear-gradient(to bottom, #f4f4f4 20%, #f9f9f9 80%, #dadbdb 100%);
+        .high-contrast & {
+            background: $white;
+            border-bottom:1px solid $light-grey;
+        }
+    }
+    %ten-to-twelve {
+    	@include span-columns(10 of 12);
+            @include shift(1);
+        @include media($desktop){
+            @include span-columns(12 of 12);
+            @include shift(0);
+            margin-right:0;
+        }
+    }
+    //IE Fixes
+    %clearfix {
+    *zoom: 1;
+        &:before, &:after {
+        content: " ";
+        display: table;
+        }
+      &:after {
+        clear: both;
+      }
+    }
+
+    %container {
+    position:relative;
+    @include outer-container;
+    @extend %clearfix;
+    }

@@ -1,0 +1,347 @@
+//Parallax Hero Image Area + Preloader
+
+.home .wrapper {
+  padding-top: 0;
+}
+
+.parallax-window {
+  background: transparent;
+  min-height: 600px;
+  @include media(min-width 600px) {
+    min-height: 840px;
+    padding-top: 170px;
+  }
+
+}
+
+.parallax-background {
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  -o-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+.parallax-background.dark {
+  color: $white;
+  background: $primary-color;
+  background-image: url('../images/fancybox_loading.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.hero-tagline {
+  position: absolute;
+  bottom: 40%;
+  display: block;
+  background: rgb(140,0,92);
+  background: rgba(140,0,92,0.45);
+  width: 100%;
+  padding: 20px 0;
+  font-size: $f48;
+  color: $white;
+  text-align: center;
+  line-height: 1em;
+  @include media($desktop) {
+    bottom: 20%;
+    font-size: $f68;
+  }
+}
+
+//Home Intro  & Promotions Section
+
+.workpower-intro {
+  position: relative;
+  z-index: 59;
+  padding: 40px 0;
+  background-color: $white;
+  @include arrowstyle($white);
+}
+
+.home-content-wrapper {
+  @include outer-container;
+}
+
+.home-content {
+  font-size: $f18;
+  @include span-columns(10 of 12);
+  @include shift(1);
+  @include media($tablet) {
+     @include span-columns(7 of 12);
+  }
+  @include media($desktop) {
+     @include span-columns(6 of 12);
+    @include shift(0);
+  }
+
+}
+
+.promotion-wrapper {
+  @include span-columns(10 of 12);
+  @include shift(1);
+  @include media($tablet) {
+     @include span-columns(3 of 12);
+    @include shift(0);
+  }
+  @include media($desktop) {
+     @include span-columns(6 of 12);
+    @include shift(0);
+  }
+}
+
+//  .promotion-area {
+//     @include span-columns(6 of 12);
+//     padding-bottom: 2%;
+
+//     @include media($desktop){
+//         @include span-columns(3 of 6);
+//     }
+// }
+.promo-area {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border-bottom: 1px solid $light-grey;
+  @include span-columns(5 of 10);
+  @include media($tablet) {
+     @include span-columns(3 of 3);
+    margin-bottom: 10px;
+  }
+  @include media($desktop) {
+     @include span-columns(3 of 6);
+  }
+
+}
+
+.promo-image {
+  img {
+    display: block;
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    // @include transition-property(all);
+    // @include transition-duration(0.5s);
+    // @include transition-timing-function(ease-in-out);
+    // @include transition-delay(0);
+  }
+}
+
+.promo-copy {
+  position: absolute;
+  z-index: 58;
+  bottom: 50%;
+  text-align: center;
+  width: 100%;
+  color: $white;
+  font-size: $f24;
+  line-height: 1em;
+  background: rgb(0,0,0);
+  background: rgba(0,0,0,0.6);
+  left: 0;
+  right: 0;
+  display: block;
+  padding: 5px 0;
+}
+
+.promo-link {
+  &:active,
+  &:link,
+  &:visited {
+    color: $white;
+    @include hide-text;
+    z-index: 59;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+//Latest News Section
+
+#latest-news {
+  @extend %gradient-fill;
+  @include arrowstyle($gradient-end);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  @include clearfix;
+
+  .latest-news-wrapper {
+    @include outer-container;
+  }
+
+  .latest-news-header {
+    @include clearfix;
+    @extend %ten-to-twelve;
+
+    .left,
+    .right {
+      line-height: $f26;
+    }
+
+  }
+
+  .latest-news-content {
+    @extend %ten-to-twelve;
+  }
+
+  .more-news-link {
+    font-weight: 400;
+    line-height: $f26;
+    display: block;
+    padding-top: 5px;
+
+    &:after {
+      @include fawesome;
+      content: "\f105";
+      padding-left: 5px;
+      display: inline-block;
+    }
+  }
+}
+
+.news-article {
+  margin-bottom: 2.1277%;
+  @include span-columns(10 of 10);
+  @include media($small-tablet) {
+     @include span-columns(5 of 10);
+    @include omega(2n);
+
+  }
+  @include media($tablet) {
+     @include span-columns(3 of 12);
+    @include omega-reset(2n);
+    @include omega(4n);
+  }
+}
+
+.news-snippet {
+  position: relative;
+  padding: 0;
+  @include media($desktop) {
+    border-bottom: 1px solid $light-grey;
+    overflow: hidden;
+  }
+}
+
+.news-snippet .article-image img {
+  margin: 0;
+  @include media($desktop) {
+     @include transition-property(all);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-in-out);
+    @include transition-delay(0);
+  }
+}
+
+.news-snippet .article-content {
+  background: $white;
+  display: block;
+  position: relative;
+  z-index: 58;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  border-bottom: 1px solid $light-grey;
+  @include media($desktop) {
+    border: none;
+    position: absolute;
+    bottom: -40px;
+    @include transition-property(all);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-in-out);
+    @include transition-delay(0);
+  }
+}
+
+.news-snippet:hover .article-content {
+  @include media($desktop) {
+    bottom: 0;
+  }
+}
+
+.news-snippet:hover .article-image img {
+  @include media($desktop) {
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+}
+
+.news-snippet .article-content-inner {
+  padding: 10px 20px;
+
+  h4 {
+    font-size: $f14;
+    margin: 0;
+    line-height: 1.5em;
+  }
+}
+
+.news-snippet .article-link {
+  @include hide-text;
+  z-index: 59;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.news-snippet .article-link-more {
+  display: table-cell;
+  height: 40px;
+  padding-left: 20px;
+  vertical-align: middle;
+  width: 100%;
+  position: relative;
+  font-size: $f14;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.news-snippet .article-link-more:before {
+  @include fawesome;
+  content: "\f0fe";
+  padding-right: 5px;
+  display: inline-block;
+}
+
+.gridder-list:after,
+.news-snippet:after,
+.promo-area:after {
+  @include media($desktop) {
+    z-index: 57;
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $secondary-color;
+    background-color: rgba(161,16,42,0.65);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    -webkit-opacity: 0;
+    opacity: 0;
+    @include transition-property(opacity);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-in-out);
+    @include transition-delay(0);
+  }
+}
+
+.gridder-list:hover:after,
+.news-snippet:hover:after,
+.promo-area:hover:after {
+  opacity: 1;
+}

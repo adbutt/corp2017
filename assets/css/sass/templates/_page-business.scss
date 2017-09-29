@@ -1,0 +1,49 @@
+// BUSINESS PAGE
+
+    .business-page {
+        background-color: $white;
+        z-index:59;
+        position:relative;
+        @include arrowstyle($white);
+    }
+    .bus-intro-wrapper {
+        @extend %ten-to-twelve;
+    }
+    #intro-our-business {
+        position:relative;
+        padding:60px 0;
+        @extend %gradient-fill;
+        @include arrowstyle($gradient-end);
+    }
+        .bus-contact-no {
+            &:before {
+                @include fawesome;
+                content:"\f095";
+                padding-right:10px ;
+                display:inline-block;
+            }
+        }
+        .bus-contact-name {
+            &:before {
+                @include fawesome;
+                content:"\f007";
+                padding-right:10px ;
+                display:inline-block;
+            }
+        }
+        .bus-web-link {
+            display: inline-block;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-top: 5px;
+            padding:5px 10px;
+            border:1px solid $secondary-color;
+            border-radius:2px;
+            &:before {
+                @include fawesome;
+                content:"\f0c1";
+                padding-right:10px ;
+                display:inline-block;
+            }
+            &:hover {border-color:$primary-color;}
+        }

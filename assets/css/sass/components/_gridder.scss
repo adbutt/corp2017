@@ -1,0 +1,236 @@
+  .grid-display-wrapper {
+  @include outer-container;
+  }
+  .gridder-content-wrapper {
+    @extend %ten-to-twelve;
+  }
+
+  .gridder {
+    padding:0;
+    list-style-type:none;
+    margin-left: -1%;
+  }
+  li.gridder-list{
+    width:100%;
+    display:inline-block;
+    vertical-align:top;
+    position:relative;
+    margin-bottom:2.1277%;
+    margin-left:1%;
+    margin-right: 1%;
+    cursor:pointer;
+    background:$white;
+    border-bottom: 1px solid $light-grey;
+    overflow:hidden;
+
+      @include media($small-tablet){ // max width 768
+      width:48%;
+        &:nth-of-type(2n) {
+          margin-right:0;
+          margin-bottom:0;
+        }
+      }
+
+
+      @include media($large-tablet){ // max width 1024
+      width:31.333%;
+        &:nth-of-type(2n) {
+          margin-right:1%;
+          margin-bottom:0;
+        }
+        &:nth-of-type(3n) {
+          margin-right:0;
+          margin-bottom:0;
+        }
+      }
+
+      @include media($desktop){ // min width 1024
+      width:23.0%;
+        &:nth-of-type(2n) {
+          margin-right:1%;
+          margin-bottom:0;
+        }
+        &:nth-of-type(3n) {
+          margin-right:1%;
+          margin-bottom:0;
+        }
+        &:nth-of-type(4n){
+          margin-right:0;
+          margin-bottom:0;
+        }
+        .gridder-image img {margin-top:0;
+          @include transition-property(all);
+          @include transition-duration(0.5s);
+          @include transition-timing-function(ease-in-out);
+          @include transition-delay(0);
+        }
+        &:hover .gridder-image img {
+          margin-top:-10px;
+          margin-bottom:10px;
+        }
+        &:hover .gridder-title {bottom:0;}
+      }
+
+      .gridder-image img {margin-top:0;}
+
+      .gridder-title {
+      background:$white;
+      display:block;
+      position:absolute;
+      z-index:58;
+      font-size:$f14;
+      font-weight:400;
+      padding:5px 10px;
+      line-height:1.5em;
+      width:100%;
+      bottom:0;
+
+        @include media($desktop){
+          bottom:-40px;
+          @include transition-property(all);
+          @include transition-duration(0.5s);
+          @include transition-timing-function(ease-in-out);
+          @include transition-delay(0);
+          left:0;
+          right:0;
+        }
+     }
+
+    .grid-more {
+      display:table-cell;
+      height:40px;
+      vertical-align:middle;
+      width:100%;
+      position:relative;
+      text-transform:uppercase;
+      color:$secondary-color;
+        &:before {
+          @include fawesome;
+          content:"\f0fe";
+          padding: 0 5px ;
+          display:inline-block;
+        }
+    }
+
+    .hasSelectedItem & {opacity:0.5;}
+
+    .hasSelectedItem &.selectedItem{opacity:1;}
+
+  } //end gridder-list
+
+  .gridder-content{display:none;}
+
+
+  .gridder-show{
+    display:block;
+    float:left;
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    margin-bottom:1%;
+  }
+
+  .gridder-padding {
+    margin-left: 1%;
+  }
+
+  .gridder-expanded-content {
+    background:$white;
+    padding:20px;
+    border-bottom: 1px solid $light-grey;
+    @include clearfix;
+  }
+
+  .gridder-navigation {
+    font-size:$f14;
+    text-transform:uppercase;
+    font-weight:400;
+    text-align:right;
+    border-top:1px solid $lighter-grey;
+    border-bottom:1px solid $lighter-grey;
+    margin-bottom:2.1277%;
+
+    a {padding:10px;}
+
+    .gridder-close:before {
+  		@include fawesome;
+  		content:"\f00d";
+  		padding-right:5px;
+  		display:inline-block;
+  	}
+
+    .gridder-nav.prev:before {
+  		@include fawesome;
+  		content:"\f053";
+  		padding-right:5px;
+  		display:inline-block;
+  	}
+
+    .gridder-nav.next{
+      padding-right:0;
+  		&:after {
+  			@include fawesome;
+  			content:"\f054";
+  			padding-left:5px;
+  			display:inline-block;
+  		}
+	 }
+  }
+
+  .gridder-intro {
+    @include media($small-tablet) {
+      @include span-columns(12 of 12);
+    }
+     @include media(min-width $tablet){
+    @include span-columns(6 of 12);
+    }
+  }
+
+    .gridder-details {
+    @include media($small-tablet) {
+      @include span-columns(12 of 12);
+    }
+     @include media(min-width $tablet){
+    @include span-columns(6 of 12);
+    }
+  }
+
+  .bus-main-image {
+    @include media($small-tablet) {
+    @include span-columns(6 of 12);
+  }
+    @include media(min-width $tablet){
+    @include span-columns(6 of 6);
+    }
+
+  }
+
+
+  .bus-contact-details {
+    @include media($small-tablet) {
+    @include span-columns(6 of 12);
+    }
+    @include media(min-width $tablet){
+    @include span-columns(6 of 6);
+    }
+
+    .bus-details, .bus-website {
+        @include media($large-tablet){
+    @include span-columns(6 of 6);
+    }
+        @include media($desktop){
+          @include span-columns(3 of 6);
+        }
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+

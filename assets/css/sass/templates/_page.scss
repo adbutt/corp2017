@@ -1,0 +1,46 @@
+// SINGLE PAGE
+
+    .page-header-custom {
+        min-height:200px;
+    }
+
+    .page-content-wrapper {
+        @extend %ten-to-twelve;
+    }
+    .page-content {
+
+        @include media ($tablet){
+            @include span-columns (7 of 10);
+        }
+        @include media ($desktop){
+            @include span-columns(7 of 12);
+        }
+    }
+    .inner-page {
+        position: relative;
+        @extend %gradient-fill;
+        @include arrowstyle($gradient-end);
+        padding-bottom:60px;
+
+        article.page {
+            .entry-wrapper {
+                padding:20px;
+                background-color:$white;
+                @include border-top-radius(5px);
+            }
+
+        }
+
+
+            .inner-page-title {
+                font-size:$f42;
+                color:$white;
+                font-weight:300;
+                line-height:1em;
+                padding-top:50px;}
+    }
+
+//NEWS PAGE
+    .latest-news-content {
+        @include clearfix;
+    }

@@ -1,0 +1,21 @@
+//Team Layout
+
+    #ourpeople {
+        background-color:$white;
+
+        .bio {
+            border-top:1px solid $light-grey;
+            padding:20px;
+            @include clearfix;
+            }
+
+        .page-bio-image {
+            float:left;
+            margin:0 20px 20px 0;
+        }
+        .bio-text .person-title {
+            font-weight: 400;
+            text-transform:uppercase;
+        }
+
+    }

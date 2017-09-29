@@ -1,0 +1,47 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.admin-bar .page-top {top:32px;}
+
+// Set your project variables here
+
+$primary-color: #1d1d1e;
+$different-red:#bd0726;
+$secondary-color: #a1102a;
+$dark-grey: #a3a4a4;
+$light-grey: #d1d1d3;
+$lighter-grey: #ececec;
+$tertiary-color: #000;
+$link-color: #a1102a;
+$link-hover-color: darken($link-color, 20%);
+$white: #fff;
+$foot-red: darken($different-red, 10%);
+$facebook:#3b5998;
+$linkedin:#007bb6;
+$youtube:#bb0000;
+$twitter:#00aced;
+$google:#dd4b39;
+
+$gradient-end: #dadbdb;
+
+
+$bad-color: red; // Bad color for errors, validation etc.
+$good-color: green; // Good color for success etc.
+$subtle-color: #999; // Subtle color for subtle text
+
+$br: 10px; // Border-radius
+$padding: 36px; // Consistent padding and margins
+//Font sizes
+$base-font-size: 16px;
+body {font-size:$base-font-size;}
+$f68: 4.250em;
+$f48: 3.000em;
+$f42: 2.625em;
+$f30: 1.875em;
+$f26: 1.625em;
+$f24: 1.500em;
+$f18: 1.125em;
+$f17: 1.063em;
+$f15: 0.938em;
+$f14: 0.875em;
+$f12: 0.750em;
